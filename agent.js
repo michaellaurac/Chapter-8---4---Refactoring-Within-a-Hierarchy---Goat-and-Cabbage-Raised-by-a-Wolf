@@ -1,7 +1,11 @@
+function coinToss () {
+  return Math.random() > 0.5;
+};
+
 class Agent {
   constructor (name, type) {
     this.name = "name";
-    if (Math.random() > 0.5) {
+    if (coinToss()) {
       this.type = "user";
     } else {
       this.type = "project";
