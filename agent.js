@@ -2,24 +2,8 @@ function coinToss () {
   return Math.random() > 0.5;
 };
 
-class Agent {
+class User {
   constructor (name, type) {
-    this.name = "name";
-    this.type = "type";
-  };
-
-  static makeProjectOrUser (agent) {
-    if (agent.type === "user") {
-      return Object.assign(Object.create(new User()), agent);
-    } else {
-      return Object.assign(Object.create(new Project()), agent);
-    }
-  };
-};
-
-class User extends Agent {
-  constructor (name, type) {
-    super();
     this.name = name;
     this.type = type;
   };
@@ -29,9 +13,8 @@ class User extends Agent {
   }
 };
 
-class Project extends Agent {
+class Project {
   constructor (name, type) {
-    super();
     this.name = name;
     this.type = type;
   };
@@ -41,4 +24,4 @@ class Project extends Agent {
   }
 };
 
-module.exports = { coinToss, Agent, User, Project };
+module.exports = { coinToss, User, Project };
