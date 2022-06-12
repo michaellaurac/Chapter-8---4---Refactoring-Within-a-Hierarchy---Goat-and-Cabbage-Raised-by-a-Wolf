@@ -6,27 +6,19 @@ const fileName = () => {
 /* eslint-env mocha */
 
 const wish = require("wish");
-const { coinToss, User, Project } = require("./agent.js");
+const { User, Project } = require("./agent.js");
 
 describe("tests run on the 'agent.js' file:", () => {
   // has the right setup
   it("verifies the test file name", () => {
     wish(fileName() === "agent_test.js");
   });
-  // initialisation
-  let agent;
-  if (coinToss()) {
-    agent = new User("name", "user");
-  } else {
-    agent = new Project("name", "project");
-  }
 
   // functional tests
-  it("returns a string starting with either 'my name is' or 'the project name is'", () => {
-    if (agent.type === "user") {
-      wish(agent.sayName() === "my name is name");
-    } else {
-      wish(agent.sayTheName() === "the project name is name");
-    }
+  it("returns a string starting with 'my name is' when a new user is created", () => {
+    wish(new User("name", "user").sayName() === "my name is name");
+  });
+  it("returns a string starting with 'the project name is' when a new project is created", () => {
+    wish(new Project("name", "project").sayTheName() === "the project name is name");
   });
 });

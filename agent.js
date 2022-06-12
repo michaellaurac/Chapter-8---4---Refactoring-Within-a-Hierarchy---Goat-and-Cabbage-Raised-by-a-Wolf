@@ -1,7 +1,3 @@
-function coinToss () {
-  return Math.random() > 0.5;
-};
-
 class User {
   constructor (name, type) {
     this.name = name;
@@ -24,4 +20,4 @@ class Project {
   }
 };
 
-module.exports = { coinToss, User, Project };
+module.exports = { User, Project };
