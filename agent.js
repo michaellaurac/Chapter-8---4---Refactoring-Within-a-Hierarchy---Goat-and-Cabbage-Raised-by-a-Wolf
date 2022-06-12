@@ -18,12 +18,24 @@ class Agent {
 };
 
 class User extends Agent {
+  constructor (name, type) {
+    super();
+    this.name = name;
+    this.type = type;
+  };
+
   sayName () {
     return `my name is ${this.name}`;
   }
 };
 
 class Project extends Agent {
+  constructor (name, type) {
+    super();
+    this.name = name;
+    this.type = type;
+  };
+
   sayTheName () {
     return `the project name is ${this.name}`;
   }
