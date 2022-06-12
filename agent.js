@@ -41,4 +41,4 @@ class Project extends Agent {
   }
 };
 
-module.exports = { coinToss, Agent };
+module.exports = { coinToss, Agent, User, Project };
