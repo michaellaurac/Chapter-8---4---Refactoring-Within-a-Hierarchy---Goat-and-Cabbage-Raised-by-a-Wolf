@@ -1,7 +1,6 @@
 class User {
-  constructor (name, type) {
+  constructor (name) {
     this.name = name;
-    this.type = type;
   };
 
   sayName () {
@@ -10,9 +9,8 @@ class User {
 };
 
 class Project {
-  constructor (name, type) {
+  constructor (name) {
     this.name = name;
-    this.type = type;
   };
 
   sayTheName () {
