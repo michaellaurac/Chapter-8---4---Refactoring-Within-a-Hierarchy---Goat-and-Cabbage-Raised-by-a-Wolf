@@ -5,11 +5,7 @@ function coinToss () {
 class Agent {
   constructor (name, type) {
     this.name = "name";
-    if (coinToss()) {
-      this.type = "user";
-    } else {
-      this.type = "project";
-    }
+    this.type = "type";
   };
 
   static makeProjectOrUser (agent) {
@@ -33,4 +29,4 @@ class Project extends Agent {
   }
 };
 
-module.exports = Agent;
+module.exports = { coinToss, Agent };
